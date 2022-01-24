@@ -1,0 +1,48 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.1771350655437603 0.2122537720127515 0.9610262768630037 1.4301617887688134
+  position -2.284806237768973 -14.196671655842836 8.14284006128373
+}
+TexturedBackground {
+  texture "mars"
+}
+TexturedBackgroundLight {
+  texture "dusk"
+  castShadows FALSE
+}
+RectangleArena {
+  translation 2.30028 -0.722597 -0.1
+  rotation 0 0 1 -1.0733753071795862
+  floorSize 10 10
+  floorTileSize 1 1
+  wallHeight 0.2
+}
+Wall {
+  size 0.2 5 2.4
+  appearance MattePaint {
+  }
+}
+SummitXl {
+  hidden translation_1 1.0166165420599782e-07 3.1479178153048792e-09 0.10668508330097985
+  hidden rotation_1 0.030949814538470614 -0.9995209397406511 -4.299153495393211e-10 7.4890249321651655e-06
+  hidden position_1_0 -1.7652850207737852e-14
+  hidden position_1_1 -1.766753118915581e-14
+  hidden position_1_2 -1.766893775736356e-14
+  hidden position_1_3 -1.766643122947067e-14
+  hidden position_15_0 1.06829548305709e-15
+  hidden position_16_0 4.470830313807942e-16
+  translation 1.96 0 0
+  rotation 0 0 1 2.61799
+  controller "ros"
+  controllerArgs [
+    "--name=robot"
+    "--use-ros-control"
+    "--auto-publish"
+    "--synchronize"
+    "--clock"
+    "--use-sim-time"
+    "--robot-description=robot"
+  ]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- roslaunch arguments -->
+	<arg name="no_gui" default="false" doc="Start Webots with minimal GUI"/>
+	<arg name="launch_rviz" default="false"/>
+	<arg name="world" default="$(find summit_xl_webots)/worlds/sample_world.wbt"/>
+	<!-- located in summit_xl_webots/worlds -->
+	<arg name="file_rviz" default="summitxl_a"/>
+
+        <!-- Start Webots -->
+	<include file="$(find webots_ros)/launch/webots.launch">
+		<arg name="mode" value="realtime"/>
+		<arg name="no_gui" value="$(arg no_gui)"/>
+		<arg name="world" value="$(arg world)"/>
+	</include>
+
+	<!-- launch rviz -->
+	<node if="$(arg launch_rviz)" name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find summit_xl_webots)/rviz/$(arg file_rviz).rviz"/>
+</launch>
