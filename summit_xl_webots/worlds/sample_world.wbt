@@ -25,19 +25,20 @@ Wall {
   }
 }
 SummitXl {
-  hidden translation_1 1.0166165420599782e-07 3.1479178153048792e-09 0.10668508330097985
-  hidden rotation_1 0.030949814538470614 -0.9995209397406511 -4.299153495393211e-10 7.4890249321651655e-06
-  hidden position_1_0 -1.7652850207737852e-14
-  hidden position_1_1 -1.766753118915581e-14
-  hidden position_1_2 -1.766893775736356e-14
-  hidden position_1_3 -1.766643122947067e-14
+  hidden translation_1 1.270708691603062e-07 3.934704340124995e-09 0.10585655364109142
+  hidden rotation_1 0.030949807357230838 -0.9995209399630157 -4.6255263247802937e-10 9.36081537977104e-06
+  hidden position_1_0 -2.742281282443923e-14
+  hidden position_1_1 -2.743749380585719e-14
+  hidden position_1_2 -2.743890037406494e-14
+  hidden position_1_3 -2.7436393846172048e-14
   hidden position_15_0 1.06829548305709e-15
-  hidden position_16_0 4.470830313807942e-16
+  hidden position_16_0 7.881889563232261e-16
   translation 1.96 0 0
   rotation 0 0 1 2.61799
+  name "robot"
   controller "ros"
   controllerArgs [
-    "--name=robot"
+    "--name=webots"
     "--use-ros-control"
     "--auto-publish"
     "--synchronize"
