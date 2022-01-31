@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.1771350655437603 0.2122537720127515 0.9610262768630037 1.4301617887688134
-  position -2.284806237768973 -14.196671655842836 8.14284006128373
+  orientation -0.3117674734960995 0.39370498164321255 0.8647528143343486 1.4828862398463512
+  position -1.7846920949477973 -10.874091386560316 10.183737834860294
 }
 TexturedBackground {
   texture "mars"
@@ -12,38 +12,51 @@ TexturedBackgroundLight {
   texture "dusk"
   castShadows FALSE
 }
-RectangleArena {
-  translation 2.30028 -0.722597 -0.1
-  rotation 0 0 1 -1.0733753071795862
-  floorSize 10 10
-  floorTileSize 1 1
-  wallHeight 0.2
-}
-Wall {
-  size 0.2 5 2.4
-  appearance MattePaint {
+Floor {
+  size 1000 1000
+  appearance Appearance {
+    material Material {
+      ambientIntensity 0.3
+      emissiveColor 0.3 0.2 0.2
+      shininess 0.7
+    }
   }
 }
+Wall {
+  translation -4.08 0 0
+  size 0.2 11 2.4
+}
+Wall {
+  translation 2.18 3.31 0
+  name "wall(3)"
+  size 0.2 4 2.3
+}
+Wall {
+  translation 1.32 -5.54 0
+  rotation 0 0 1 1.5708
+  name "wall(1)"
+  size 0.2 11 2.4
+}
+Wall {
+  translation 1.32 5.4 0
+  rotation 0 0 1 1.5708
+  name "wall(2)"
+  size 0.2 11 2.4
+}
+Window {
+  translation 6.73 0 0
+  size 0.2 11 2.4
+}
 SummitXl {
-  hidden translation_1 1.270708691603062e-07 3.934704340124995e-09 0.10585655364109142
-  hidden rotation_1 0.030949807357230838 -0.9995209399630157 -4.6255263247802937e-10 9.36081537977104e-06
-  hidden position_1_0 -2.742281282443923e-14
-  hidden position_1_1 -2.743749380585719e-14
-  hidden position_1_2 -2.743890037406494e-14
-  hidden position_1_3 -2.7436393846172048e-14
-  hidden position_15_0 1.06829548305709e-15
-  hidden position_16_0 7.881889563232261e-16
-  translation 1.96 0 0
-  rotation 0 0 1 2.61799
-  name "robot"
-  controller "ros"
+  translation -1.48 0.94 0
+  name "SummitXl(1)"
   controllerArgs [
-    "--name=webots"
-    "--use-ros-control"
-    "--auto-publish"
-    "--synchronize"
     "--clock"
     "--use-sim-time"
+    "--synchronize"
+    "--auto-publish"
+    "--use-ros-control"
     "--robot-description=robot"
+    "--name=summit_webots"
   ]
 }

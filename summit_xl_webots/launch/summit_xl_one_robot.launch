@@ -100,8 +100,8 @@
         <include if="$(arg launch_base_hw_sim)" file="$(find robotnik_base_hw_sim)/launch/summit_xl_hw_sim.launch">
             <arg name="prefix" value="$(arg prefix)"/>
         </include>
-
-        <group if="$(arg launch_battery_estimator)">
+</launch>
+        <!-- <group if="$(arg launch_battery_estimator)">
             <!-- start dock_manager node -->
             <include file="$(find charge_manager)/launch/charge_manager.launch">
                 <arg name="docker_mode" value="manual_sw"/>
@@ -118,10 +118,10 @@
                 <arg name="current_analog_input_number" value="2" />
             </include>
 
-        </group>
+        </group> -->
 
         <!-- imu_complementary_filter-->
-        <node pkg="imu_complementary_filter" type="complementary_filter_node" name="complementary_filter_node" output="screen">
+        <!-- <node pkg="imu_complementary_filter" type="complementary_filter_node" name="complementary_filter_node" output="screen">
             <remap from="imu/mag" to="mavros/imu/mag"/>
             <param name="fixed_frame" value="$(arg prefix)imu_link"/>
             <param name="publish_tf" value="false"/>
@@ -131,7 +131,7 @@
             <param name="use_mag" value="false"/>
             <param name="gain_acc" value="0.005"/>
             <param name="gain_mag" value="0.001"/>
-        </node>
+        </node> -->
 
 
         <!-- amcl and map server base-->
@@ -149,24 +149,24 @@
         </include>
 
         <!-- move base -->
-        <include if="$(arg launch_move_base)" file="$(find summit_xl_navigation)/launch/move_base.launch">
+        <!-- <include if="$(arg launch_move_base)" file="$(find summit_xl_navigation)/launch/move_base.launch">
             <arg name="prefix" value="$(arg prefix)"/>
             <arg name="local_planner" value="$(arg movebase_local_planner)"/>
             <arg if="$(arg omni_drive)" name="differential_robot" value="false"/>
             <arg unless="$(arg omni_drive)" name="differential_robot" value="true"/>
-        </include>
+        </include> -->
 
         <!-- gmapping -->
-        <include if="$(arg launch_gmapping)" file="$(find summit_xl_localization)/launch/slam_gmapping.launch">
+        <!-- <include if="$(arg launch_gmapping)" file="$(find summit_xl_localization)/launch/slam_gmapping.launch">
             <arg name="prefix" value="$(arg prefix)"/>
             <arg name="scan_topic" value="summit_xl_front_laser_sensor/laser_scan"/>
-        </include>
+        </include> -->
 
         <!-- merge lasers -->
-        <include if="$(arg merge_lasers)" file="$(find summit_xl_bringup)/launch/merge_laser.launch">
+        <!-- <include if="$(arg merge_lasers)" file="$(find summit_xl_bringup)/launch/merge_laser.launch">
             <arg name="laserscan_topics" value="$(arg merge_laser_topics)"/>
             <arg name="prefix" value="$(arg prefix)"/>
-        </include>
+        </include> -->
 
         <!-- MoveGroup Moveit! -->
         <include if="$(arg launch_moveit)" file="$(find summit_xl_j2s7s300_moveit_config)/launch/summit_xl_j2s7s300_moveit_config.launch">
@@ -181,11 +181,11 @@
         <arg name="run_ar_locator" value="true"/>
     </include>
  -->
-    <include if="$(arg launch_navigation)" file="$(find summit_xl_navigation)/launch/navigation_complete.launch">
+    <!-- <include if="$(arg launch_navigation)" file="$(find summit_xl_navigation)/launch/navigation_complete.launch">
         <arg name="id_robot" value="$(arg id_robot)"/>
         <arg name="has_docker" value="true"/>
         <arg name="run_laser_docker" value="true"/>
-    </include>
+    </include> -->
 <!--
     <group if="$(arg launch_rlc)">
 
@@ -207,4 +207,4 @@
         <arg name="launch_system_monitor" value="false"/>
     </include>
 
-</launch>
+

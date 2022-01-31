@@ -1,31 +1,7 @@
-#VRML_SIM R2022a utf8
-# license: Apache License 2.0
-# license url: http://www.apache.org/licenses/LICENSE-2.0
-# This is a proto file for Webots for the SummitXl
-# Extracted from: summit.urdf
-
-PROTO SummitXl [
-  field  SFVec3f     translation     0 0 0
-  field  SFRotation  rotation        0 0 1 0
-  field  SFString    name            "SummitXl"  # Is `Robot.name`.
-  field  SFString    controller      "ros"      # Is `Robot.controller`.
-  field  MFString    controllerArgs  []          # Is `Robot.controllerArgs`.
-  field  SFString    customData      ""          # Is `Robot.customData`.
-  field  SFBool      supervisor      FALSE       # Is `Robot.supervisor`.
-  field  SFBool      synchronization TRUE        # Is `Robot.synchronization`.
-  field  SFBool      selfCollision   FALSE       # Is `Robot.selfCollision`.
-]
-{
+#VRML_OBJ R2022a utf8
 Robot {
-    translation IS translation
-    rotation IS rotation
-	name IS name
-    controller IS controller
-    controllerArgs IS controllerArgs
-    customData IS customData
-    supervisor IS supervisor
-    synchronization IS synchronization
-    selfCollision IS selfCollision
+  translation 2.0899999605094277 6.9091807987817285e-12 -0.009876229301459715
+  rotation 3.1019992752776665e-07 0.9999999999999439 -1.270199035293595e-07 0.0022490188023021663
   children [
     Shape {
       appearance PBRAppearance {
@@ -840,5 +816,4 @@ Robot {
       0.004 0 0
     ]
   }
-}
 }
